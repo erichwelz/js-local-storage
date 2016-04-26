@@ -11,7 +11,7 @@
     #list .checked {
        color: #999;
     }
-    #list .checked::ater {
+    #list .checked::after {
       content: '✓';
     }
     #list .done {
@@ -40,9 +40,8 @@
         list = document.querySelector('#list');
 
     form.addEventListener('submit', function(ev) {
-      list.innerHTML = '<li>' + item.value + '</li>';
-
-      ev.preventdDefault();
+      list.innerHTML += '<li>' + item.value + '</li>';
+      ev.preventDefault();
     }, false);
 
     list.addEventListener('click', function(ev) {
