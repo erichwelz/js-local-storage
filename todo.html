@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do App in Vanilla</title>
+  <style type="text/css">
+    body {
+      font-family: arial, sans-serif;;
+    }
+
+    #list .checked {
+       color: #999;
+    }
+    #list .checked::ater {
+      content: '✓';
+    }
+    #list .done {
+      color: #999;
+      text-decoration: line-through;
+    }
+
+  </style>
+</head>
+<body>
+<form>
+  <label>Do this: <input type="text" name="item" id="item" required</label>
+  <input type="submit" value="Add to list">
+</form>
+<ul id="list">
+  <li>Item</li>
+  <li class="checked">Checked item</li>
+  <li class="done">Done item</li>
+</ul>
+
+<script>
+
+</script>
+
+</body>
+</html>
