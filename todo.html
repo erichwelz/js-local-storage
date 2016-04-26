@@ -41,6 +41,7 @@
 
     form.addEventListener('submit', function(ev) {
       list.innerHTML += '<li>' + item.value + '</li>';
+      store();
       ev.preventDefault();
     }, false);
 
@@ -49,6 +50,7 @@
           classList = t.classList;
       if (classList.contains('done') && classList.contains('checked')) {
         t.parentNode.removeChild(t);
+        store();
       } else {
         if (classList.contains('checked')) {
           t.classList.add('done');
@@ -56,9 +58,16 @@
           classList.add('checked');
         }
       }
-      ev.preventdDefault();
+      ev.preventDefault();
     }, false);
-
+    function store() {
+      window.localStorage.myitems = list.innerHTML;
+    }
+    function retrieve() {
+      list.innerHTML = window.localStorage.myitems;
+    }
+    // Retrieve items if any on initial load
+    retrieve();
   })();
 
 </script>
